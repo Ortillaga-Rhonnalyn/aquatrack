@@ -1,0 +1,577 @@
+/* ==========================================================
+   AquaTrack — Landing Page
+   For: Gaeven's Water Refilling Station (IT 314 Project)
+   File: assets/css/style.css
+   ========================================================== */
+
+:root {
+    --primary: #0e6073;
+    --primary-dark: #0a485a;
+    --aqua: #43b6c6;
+    --aqua-light: #e6f7f9;
+    --surface: #ffffff;
+    --page: #f6fbfc;
+    --text: #173b48;
+    --muted: #5b737c;
+    --border: #d9e9ec;
+    --shadow: 0 12px 28px rgba(20, 84, 102, 0.07);
+    --radius: 16px;
+}
+
+/* 1. General styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+svg {
+    display: block;
+}
+
+:focus-visible {
+    outline: 3px solid var(--aqua);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: #b6ebf0;
+    color: var(--primary-dark);
+}
+
+.container {
+    width: min(1100px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.section-padding {
+    padding-block: 76px;
+}
+
+/* 2. Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 78px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.brand-symbol {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--primary);
+    background: var(--aqua-light);
+    border-radius: 13px;
+}
+
+.brand-symbol svg {
+    width: 30px;
+    height: 30px;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-dark);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+}
+
+.brand-name small {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    color: #466571;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--primary);
+}
+
+.header-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-shrink: 0;
+    padding: 10px 16px;
+    color: var(--primary);
+    border: 1px solid #a7d8df;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.header-login:hover {
+    background: var(--aqua-light);
+    border-color: var(--aqua);
+}
+
+/* 3. Welcome / hero section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(115deg, #f5fcfd 0%, #e9f8fa 63%, #dff4f7 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 38px;
+    min-height: 550px;
+    padding-block: 64px 70px;
+}
+
+.hero-kicker,
+.section-label {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.hero-kicker {
+    padding: 7px 12px;
+    background: #d9f2f5;
+    border: 1px solid #c6e9ee;
+    border-radius: 999px;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+    margin: 20px 0;
+    color: var(--text);
+    font-size: clamp(35px, 4.2vw, 55px);
+    font-weight: 800;
+    line-height: 1.17;
+    letter-spacing: -1.7px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero-description {
+    max-width: 540px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 46px;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-outline {
+    color: var(--primary);
+    background: #fff;
+    border-color: #add6de;
+}
+
+.btn-outline:hover {
+    background: var(--aqua-light);
+    border-color: var(--aqua);
+}
+
+.hero-note {
+    margin: 18px 0 0;
+    color: #64818a;
+    font-size: 12px;
+}
+
+/* The gallon itself is the SVG already inside index.php. */
+.hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 420px;
+    isolation: isolate;
+}
+
+.art-circle {
+    position: absolute;
+    z-index: -1;
+    width: min(94%, 390px);
+    aspect-ratio: 1;
+    background: radial-gradient(circle at 36% 29%, #fff 0%, #c8edf2 55%, #a2dde7 100%);
+    border: 1px solid rgba(58, 158, 179, 0.2);
+    border-radius: 50%;
+}
+
+.art-circle::before,
+.art-circle::after {
+    position: absolute;
+    content: "";
+    inset: 22px;
+    border: 1px solid rgba(26, 130, 150, 0.1);
+    border-radius: 50%;
+}
+
+.art-circle::after {
+    inset: 46px;
+}
+
+.gallon-art {
+    width: min(80%, 295px);
+    height: auto;
+    filter: drop-shadow(0 12px 12px rgba(23, 95, 115, 0.09));
+    animation: float-gallon 5s ease-in-out infinite;
+}
+
+.art-bubble {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 2px solid #82cdd8;
+    border-radius: 50%;
+}
+
+.art-bubble-one {
+    top: 17%;
+    right: 14%;
+    width: 23px;
+    height: 23px;
+}
+
+.art-bubble-two {
+    top: 37%;
+    left: 10%;
+    width: 13px;
+    height: 13px;
+}
+
+.art-bubble-three {
+    bottom: 22%;
+    right: 7%;
+}
+
+.art-caption {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: max-content;
+    max-width: 100%;
+    transform: translateX(-50%);
+    color: #467e8c;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@keyframes float-gallon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+/* 4. About */
+.about {
+    background: var(--surface);
+}
+
+.about-inner {
+    max-width: 820px;
+    text-align: center;
+}
+
+.about h2,
+.features h2,
+.portal-section h2 {
+    margin: 10px 0 14px;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+}
+
+.about p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+/* 5. Feature cards */
+.features {
+    background: var(--page);
+}
+
+.features-heading {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.features-heading h2 {
+    margin-bottom: 10px;
+}
+
+.features-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 25px 22px 27px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: #9fd4dc;
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 23px;
+    color: var(--primary);
+    background: #e2f5f7;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.feature-card h3 {
+    margin: 0 0 9px;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* 6. Login reminder */
+.portal-section {
+    padding-block: 42px;
+    background: #e0f3f6;
+    border-block: 1px solid #c9e7ed;
+}
+
+.portal-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.portal-section h2 {
+    margin: 0 0 7px;
+    font-size: clamp(22px, 2.7vw, 28px);
+}
+
+.portal-section p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.portal-inner .btn {
+    flex-shrink: 0;
+}
+
+/* 7. Footer */
+.site-footer {
+    background: var(--primary-dark);
+    color: #e9f9fb;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-block: 26px;
+}
+
+.footer-inner p {
+    margin: 0;
+    color: #d9eff2;
+    font-size: 12px;
+}
+
+/* 8. Responsive layout */
+@media (max-width: 950px) {
+    .header-inner { gap: 12px; }
+    .main-nav { gap: 16px; }
+    .hero-grid { gap: 12px; }
+    .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+    html { scroll-padding-top: 132px; }
+
+    .section-padding { padding-block: 55px; }
+
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-block: 12px;
+    }
+
+    .brand { margin-right: auto; }
+    .brand-name { font-size: 20px; }
+    .brand-name small { font-size: 8px; }
+    .brand-symbol { width: 40px; height: 40px; }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+        padding-top: 6px;
+        border-top: 1px solid var(--border);
+    }
+
+    .main-nav a { font-size: 13px; }
+    .header-login { padding: 9px 12px; font-size: 13px; }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        min-height: 0;
+        padding-block: 55px 44px;
+    }
+
+    .hero-content { text-align: center; }
+    .hero-content h1 { margin-inline: auto; letter-spacing: -1px; }
+    .hero-description { margin-inline: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { min-height: 340px; }
+    .art-circle { width: min(85%, 325px); }
+    .gallon-art { width: min(70%, 230px); }
+
+    .portal-inner { align-items: flex-start; flex-direction: column; gap: 18px; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 5px; }
+}
+
+@media (max-width: 420px) {
+    .container { width: min(100% - 30px, 1100px); }
+    .brand-name { font-size: 18px; }
+    .brand-name small { font-size: 7px; }
+    .header-login { gap: 5px; padding: 8px 10px; font-size: 12px; }
+    .main-nav { gap: 19px; }
+    .hero-content h1 { font-size: 34px; }
+    .hero-description { font-size: 15px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn { width: 100%; }
+    .hero-visual { min-height: 315px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-card { padding: 23px; }
+    .feature-icon { margin-bottom: 14px; }
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .gallon-art { animation: none; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

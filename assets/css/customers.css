@@ -1,0 +1,65 @@
+/* AquaTrack Customer Management: content-only styles.
+   The sidebar, topbar, colors, breakpoints and layout come from admin.css. */
+:root { --teal: var(--navy); --teal-dark: var(--navy-dark); }
+.customer-form input,.customer-form textarea,.customer-form select,.filters input,.filters select {font:inherit}
+.customer-page-heading {align-items:center}
+.back-btn {display:inline-flex;padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:9px;color:var(--navy);font-size:12px;font-weight:750;white-space:nowrap}
+.back-btn:hover {background:var(--pale)}
+.overview {display:grid;grid-template-columns:1fr 1fr 2fr;gap:14px;margin-bottom:23px}
+.overview-card {min-height:104px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.overview-card>span {color:#607f89;font-size:12px;font-weight:650}
+.overview-card strong {display:block;color:var(--navy);font-size:29px;line-height:1.2;margin-top:8px}
+.overview-note {background:#e9f8f9;border-color:#d9edef}
+.overview-note p {color:#5a7b85;font-size:12px;line-height:1.6;margin:7px 0 0;max-width:440px}
+.alert {margin-bottom:17px;padding:12px 15px;border-radius:9px;font-size:13px}
+.alert.success {color:#236e4b;background:#e7f7ee;border:1px solid #bce8cd}
+.alert.danger {color:#a23440;background:#fff0f2;border:1px solid #f3c7ce}
+.work-grid {display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.8fr);gap:18px;align-items:start}
+.work-grid .panel {min-width:0}
+.panel-head {display:flex;justify-content:space-between;align-items:center;gap:10px;padding:20px 21px;border-bottom:1px solid #ecf2f3}
+.panel-head h2 {margin:4px 0 0;font-size:17px;letter-spacing:-.2px}
+.mini-label {color:#2799ab;letter-spacing:1.5px;font-size:10px;font-weight:800}
+.cancel-link {color:var(--navy);font-size:12px;font-weight:700;white-space:nowrap}
+.customer-form {display:flex;flex-direction:column;padding:20px 21px 22px}
+.customer-form label {margin:0 0 7px;font-size:12px;font-weight:750}
+.customer-form label span {color:#d95b61}
+.customer-form label small {color:var(--muted);font-weight:400}
+.customer-form input,.customer-form textarea,.customer-form select,.filters input,.filters select {width:100%;min-height:44px;margin:0 0 18px;padding:10px 12px;color:var(--text);background:#fbfeff;border:1px solid #ccdee3;border-radius:8px;outline:none}
+.customer-form textarea {resize:vertical;min-height:90px}
+.customer-form input:focus,.customer-form textarea:focus,.customer-form select:focus,.filters input:focus,.filters select:focus {border-color:var(--aqua);box-shadow:0 0 0 3px rgba(67,182,198,.13)}
+.primary-btn {min-height:45px;border:0;border-radius:8px;background:var(--navy);color:#fff;font-weight:750}
+.primary-btn:hover {background:var(--navy-dark)}
+.form-note {color:var(--muted);font-size:11px;text-align:center;margin:13px 0 0}
+.record-total {font-size:11px;color:#457e8d;background:#edf8f9;border-radius:99px;padding:5px 9px;white-space:nowrap}
+.filters {display:grid;grid-template-columns:1fr 125px auto;gap:9px;padding:17px 18px}
+.filters input,.filters select {margin:0;min-width:0}
+.filter-btn {padding:9px 16px;background:var(--navy);color:white;border:0;border-radius:8px;font-weight:700}
+.filter-btn:hover {background:var(--navy-dark)}
+.sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.table-scroll {overflow-x:auto}
+.records table {width:100%;border-collapse:collapse;font-size:12px;text-align:left;white-space:normal}
+.records th {text-transform:uppercase;font-size:10px;letter-spacing:.45px;color:#869ca4}
+.records th,.records td {padding:14px 12px;border-top:1px solid #edf3f4;vertical-align:middle}
+.records th:first-child,.records td:first-child {padding-left:19px}
+.records th:last-child,.records td:last-child {padding-right:19px}
+.records td strong,.records td small,.records td span {display:block}
+.records td strong {color:var(--text);font-size:12px}
+.records td small {color:#8198a1;font-size:11px;margin-top:4px}
+.address-text {max-width:250px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.records .status {display:inline-block;padding:5px 9px;border-radius:99px;font-size:10px;font-weight:750}
+.records .status.active {background:#e3f7ec;color:#26794d}
+.records .status.inactive {background:#f0f1f2;color:#70808a}
+.row-actions {display:flex;align-items:center;gap:10px}
+.row-actions a,.toggle-btn {border:0;padding:3px 0;background:none;color:var(--navy);font-weight:750;font-size:11px;white-space:nowrap}
+.row-actions a:hover,.toggle-btn:hover {text-decoration:underline}
+.toggle-btn {color:#93662c}
+.records .empty-state {display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;text-align:center;padding:25px}
+.records .empty-state span {font-size:29px}
+.records .empty-state strong {margin-top:9px;font-size:13px}
+.records .empty-state p {color:var(--muted);font-size:12px;margin:4px 0 0}
+.pagination {display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 21px;border-top:1px solid var(--line);font-size:12px}
+.pagination a {color:var(--navy);font-weight:750}
+.pagination span {color:var(--muted)}
+.footer {text-align:center;padding:30px 5px 8px;color:#8da4ac;font-size:11px}
+@media(max-width:1150px) {.work-grid{grid-template-columns:1fr}.overview{grid-template-columns:1fr 1fr}.overview-note{grid-column:span 2}}
+@media(max-width:550px) {.page-heading{display:block}.back-btn{margin-top:14px}.overview{gap:9px}.overview-card{padding:15px}.overview-card strong{font-size:25px}.filters{grid-template-columns:1fr 110px}.filter-btn{grid-column:1/-1;min-height:42px}.panel-head,.customer-form{padding-left:16px;padding-right:16px}}
